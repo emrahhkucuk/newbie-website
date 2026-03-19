@@ -1,0 +1,1145 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Newbie - Kariyer Yolculuğunuzda Mentorunuz Yanınızda. AI destekli kariyer danışmanlığı ve mentor-mentee eşleştirme platformu.">
+    <meta name="keywords" content="mentor, mentee, kariyer, danışmanlık, AI, networking, profesyonel gelişim">
+    <meta property="og:title" content="Newbie - I am still learning">
+    <meta property="og:description" content="Kariyer yolculuğunuzda size rehberlik edecek mentorunuzu bulun.">
+    <meta property="og:type" content="website">
+    <title>Newbie - I am still learning | Kariyer Mentorluk Platformu</title>
+    <link rel="icon" type="image/png" href="newbie_seffaf.png">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@300;400;500;600;700&family=Nunito:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <!-- Splash Screen -->
+    <div id="splash-screen">
+        <canvas id="space-canvas"></canvas>
+        <div class="splash-content">
+            <img src="newbie_seffaf.png" alt="Newbie Logo" class="splash-logo">
+            <img src="yazi_seffaf_beyazarkaplan.png.png" alt="newbie" class="splash-text">
+            <button id="splash-btn" type="button" onclick="hideSplash()">Başlayalım</button>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <header class="header" id="header">
+        <nav class="nav container">
+            <a href="#" class="nav-logo">
+                <img src="newbie_seffaf.png" alt="Newbie Logo">
+            </a>
+            <ul class="nav-menu" id="nav-menu">
+                <li class="nav-item"><a href="#ai-danisman" class="nav-link">AI Danışman</a></li>
+                <li class="nav-item"><a href="#deneyimler" class="nav-link">Deneyimler</a></li>
+                <li class="nav-item"><a href="#mentorluk" class="nav-link">Mentörlük</a></li>
+                <li class="nav-item"><a href="#topluluklar" class="nav-link">Topluluklar</a></li>
+            </ul>
+            <div class="nav-buttons">
+                <a href="#download" class="btn btn-primary">Kayıt Ol</a>
+            </div>
+            <div class="nav-toggle" id="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero" id="hero">
+            <div class="hero-bg-pattern"></div>
+            <div class="container hero-container">
+                <div class="hero-content">
+                    <span class="hero-badge">I am still learning</span>
+                    <h1 class="hero-title">Kariyer Yolculuğunuzda <span class="gradient-text">Mentorunuz</span>
+                        Yanınızda</h1>
+                    <p class="hero-subtitle">AI destekli kariyer danışmanlığı, deneyimli mentorlarla birebir görüşmeler
+                        ve profesyonel networking fırsatlarıyla kariyer hedeflerinize ulaşın.</p>
+                    <div class="hero-buttons">
+                        <a href="#download" class="btn btn-primary btn-lg">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M5 12h14M12 5l7 7-7 7" />
+                            </svg>
+                            Şimdi Başla
+                        </a>
+                        <a href="#download" class="btn btn-outline btn-lg">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3" />
+                            </svg>
+                            Uygulamayı İndir
+                        </a>
+                    </div>
+                    <div class="hero-stats">
+                        <div class="hero-stat">
+                            <span class="stat-number" data-count="10000">0</span>
+                            <span class="stat-label">Aktif Kullanıcı</span>
+                        </div>
+                        <div class="hero-stat">
+                            <span class="stat-number" data-count="500">0</span>
+                            <span class="stat-label">Mentor</span>
+                        </div>
+                        <div class="hero-stat">
+                            <span class="stat-number" data-count="5000">0</span>
+                            <span class="stat-label">Başarılı Eşleştirme</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <img src="görsel/ana sayfa.png" alt="Newbie uygulaması - Size Özel ana sayfa" class="hero-app-img">
+                </div>
+            </div>
+            <div class="hero-wave">
+                <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
+                    <path
+                        d="M0,64L48,69.3C96,75,192,85,288,80C384,75,480,53,576,48C672,43,768,53,864,64C960,75,1056,85,1152,80C1248,75,1344,53,1392,42.7L1440,32L1440,120L1392,120C1344,120,1248,120,1152,120C1056,120,960,120,864,120C768,120,672,120,576,120C480,120,384,120,288,120C192,120,96,120,48,120L0,120Z"
+                        fill="#ffffff"></path>
+                </svg>
+            </div>
+        </section>
+
+        <!-- AI Danışman Section -->
+        <section class="main-feature" id="ai-danisman">
+            <div class="container">
+                <div class="main-feature-wrapper">
+                    <div class="main-feature-content" data-aos="fade-right">
+                        <span class="section-badge">AI Danışman</span>
+                        <h2 class="section-title">Yapay Zeka ile <span class="gradient-text">Kariyer Rehberiniz</span>
+                        </h2>
+                        <p class="main-feature-description">Newbie'nin AI Danışman özelliği, kariyer sorularınıza 7/24
+                            yanıt veren akıllı bir asistan. CV analizi, kariyer yol haritası oluşturma, mülakat
+                            hazırlığı ve daha fazlası için yanınızda.</p>
+                        <ul class="feature-list">
+                            <li>
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                                <span>CV ve özgeçmiş analizi</span>
+                            </li>
+                            <li>
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                                <span>Kişiselleştirilmiş kariyer yol haritası</span>
+                            </li>
+                            <li>
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                                <span>Mülakat hazırlık desteği</span>
+                            </li>
+                            <li>
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                                <span>Anlık kariyer tavsiyeleri</span>
+                            </li>
+                            <li>
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                                <span>İş ilanı önerileri</span>
+                            </li>
+                        </ul>
+                        <a href="#download" class="btn btn-primary btn-lg">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M5 12h14M12 5l7 7-7 7" />
+                            </svg>
+                            AI Danışman'ı Dene
+                        </a>
+                    </div>
+                    <div class="main-feature-visual" data-aos="fade-left">
+                        <img src="görsel/ai-danisman.png" alt="Newbie AI Danışman ekranı" class="feature-app-img">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Deneyimler Section -->
+        <section class="main-feature alt" id="deneyimler">
+            <div class="container">
+                <div class="main-feature-wrapper reverse">
+                    <div class="main-feature-content" data-aos="fade-left">
+                        <span class="section-badge">Deneyimler</span>
+                        <h2 class="section-title">Kariyer <span class="gradient-text">Deneyimlerini Keşfet</span></h2>
+                        <p class="main-feature-description">Sektörünüzdeki profesyonellerin gerçek kariyer hikayelerini
+                            okuyun. Başarı hikayeleri, zorluklar ve çözümler, kariyer geçişleri ve daha fazlası.</p>
+                        <ul class="feature-list">
+                            <li>
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                                <span>Gerçek kariyer hikayeleri</span>
+                            </li>
+                            <li>
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                                <span>Başarı ve başarısızlık hikayeleri</span>
+                            </li>
+                            <li>
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                                <span>Kariyer geçiş deneyimleri</span>
+                            </li>
+                            <li>
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                                <span>İlham verici içerikler</span>
+                            </li>
+                            <li>
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                                <span>Kendi deneyimlerinizi paylaşın</span>
+                            </li>
+                        </ul>
+                        <a href="#download" class="btn btn-primary btn-lg">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M5 12h14M12 5l7 7-7 7" />
+                            </svg>
+                            Deneyimleri Keşfet
+                        </a>
+                    </div>
+                    <div class="main-feature-visual" data-aos="fade-right">
+                        <img src="görsel/deneyimler.png" alt="Newbie Deneyimler ekranı" class="feature-app-img">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mentörlük Section -->
+        <section class="main-feature" id="mentorluk">
+            <div class="container">
+                <div class="main-feature-wrapper">
+                    <div class="main-feature-content" data-aos="fade-right">
+                        <span class="section-badge">Mentörlük</span>
+                        <h2 class="section-title">Deneyimli <span class="gradient-text">Mentorlarınız</span></h2>
+                        <p class="main-feature-description">Sektörünüzdeki en iyi mentorlarla birebir görüşmeler yapın.
+                            AI destekli eşleştirme ile size en uygun mentoru bulun ve kariyer hedeflerinize ulaşın.</p>
+                        <ul class="feature-list">
+                            <li>
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                                <span>AI destekli mentor eşleştirme</span>
+                            </li>
+                            <li>
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                                <span>Birebir görüşme planlama</span>
+                            </li>
+                            <li>
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                                <span>Gerçek zamanlı mesajlaşma</span>
+                            </li>
+                            <li>
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                                <span>Mentor değerlendirme sistemi</span>
+                            </li>
+                            <li>
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                                <span>Seans takibi ve notlar</span>
+                            </li>
+                        </ul>
+                        <a href="#download" class="btn btn-primary btn-lg">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M5 12h14M12 5l7 7-7 7" />
+                            </svg>
+                            Mentor Bul
+                        </a>
+                    </div>
+                    <div class="main-feature-visual" data-aos="fade-left">
+                        <img src="görsel/mentörlük.png" alt="Newbie Mentörlük ekranı" class="feature-app-img">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Topluluklar Section -->
+        <section class="main-feature alt" id="topluluklar">
+            <div class="container">
+                <div class="main-feature-wrapper reverse">
+                    <div class="main-feature-content" data-aos="fade-left">
+                        <span class="section-badge">Topluluklar</span>
+                        <h2 class="section-title">Profesyonel <span class="gradient-text">Topluluklar</span></h2>
+                        <p class="main-feature-description">Sektörünüze özel topluluklara katılın, deneyimlerinizi
+                            paylaşın ve öğrenin. Networking fırsatları, iş ilanları ve profesyonel gelişim etkinlikleri.
+                        </p>
+                        <ul class="feature-list">
+                            <li>
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                                <span>Sektörel topluluklar</span>
+                            </li>
+                            <li>
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                                <span>Deneyim paylaşım platformu</span>
+                            </li>
+                            <li>
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                                <span>Networking etkinlikleri</span>
+                            </li>
+                            <li>
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                                <span>İş ilanı paylaşımı</span>
+                            </li>
+                            <li>
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                                <span>Webinar ve workshop'lar</span>
+                            </li>
+                        </ul>
+                        <a href="#download" class="btn btn-primary btn-lg">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M5 12h14M12 5l7 7-7 7" />
+                            </svg>
+                            Topluluklara Katıl
+                        </a>
+                    </div>
+                    <div class="main-feature-visual" data-aos="fade-right">
+                        <img src="görsel/topluluklar.png" alt="Newbie Topluluklar ekranı" class="feature-app-img">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="features" id="features">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-badge">Özellikler</span>
+                    <h2 class="section-title">Kariyer Gelişiminiz İçin <span class="gradient-text">Her Şey Tek
+                            Yerde</span></h2>
+                    <p class="section-subtitle">Newbie, kariyer yolculuğunuzda ihtiyacınız olan tüm araçları ve
+                        kaynakları sunar.</p>
+                </div>
+                <div class="features-grid">
+                    <div class="feature-card" data-aos="fade-up">
+                        <div class="feature-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <circle cx="12" cy="12" r="10" />
+                                <path d="M12 6v6l4 2" />
+                            </svg>
+                        </div>
+                        <h3>AI Destekli Kariyer Danışmanlığı</h3>
+                        <p>Yapay zeka ile kişiselleştirilmiş kariyer tavsiyeleri ve yol haritası oluşturun.</p>
+                    </div>
+                    <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="feature-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                                <circle cx="9" cy="7" r="4" />
+                                <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" />
+                            </svg>
+                        </div>
+                        <h3>Mentor-Mentee Eşleştirme</h3>
+                        <p>Akıllı algoritma ile size en uygun mentoru veya mentee'yi bulun.</p>
+                    </div>
+                    <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="feature-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+                            </svg>
+                        </div>
+                        <h3>Gerçek Zamanlı Mesajlaşma</h3>
+                        <p>Mentorunuzla anlık mesajlaşma ve dosya paylaşımı yapın.</p>
+                    </div>
+                    <div class="feature-card" data-aos="fade-up" data-aos-delay="300">
+                        <div class="feature-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+                                <line x1="16" y1="2" x2="16" y2="6" />
+                                <line x1="8" y1="2" x2="8" y2="6" />
+                                <line x1="3" y1="10" x2="21" y2="10" />
+                            </svg>
+                        </div>
+                        <h3>Takvim & Seans Yönetimi</h3>
+                        <p>Görüşmelerinizi kolayca planlayın ve takip edin.</p>
+                    </div>
+                    <div class="feature-card" data-aos="fade-up" data-aos-delay="400">
+                        <div class="feature-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                                <polyline points="14 2 14 8 20 8" />
+                                <line x1="16" y1="13" x2="8" y2="13" />
+                                <line x1="16" y1="17" x2="8" y2="17" />
+                                <polyline points="10 9 9 9 8 9" />
+                            </svg>
+                        </div>
+                        <h3>CV Analizi & Portföy</h3>
+                        <p>CV'nizi analiz ettirin ve kariyer portföyünüzü oluşturun.</p>
+                    </div>
+                    <div class="feature-card" data-aos="fade-up" data-aos-delay="500">
+                        <div class="feature-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <circle cx="12" cy="12" r="10" />
+                                <line x1="2" y1="12" x2="22" y2="12" />
+                                <path
+                                    d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+                            </svg>
+                        </div>
+                        <h3>Networking & Bağlantılar</h3>
+                        <p>Sektörünüzdeki profesyonellerle bağlantı kurun.</p>
+                    </div>
+                    <div class="feature-card" data-aos="fade-up" data-aos-delay="600">
+                        <div class="feature-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path
+                                    d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z" />
+                                <line x1="7" y1="7" x2="7.01" y2="7" />
+                            </svg>
+                        </div>
+                        <h3>Kariyer Deneyim Paylaşımı</h3>
+                        <p>Toplulukla deneyimlerinizi paylaşın ve öğrenin.</p>
+                    </div>
+                    <div class="feature-card" data-aos="fade-up" data-aos-delay="700">
+                        <div class="feature-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <rect x="2" y="7" width="20" height="14" rx="2" ry="2" />
+                                <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
+                            </svg>
+                        </div>
+                        <h3>İş İlanları</h3>
+                        <p>Size özel iş fırsatlarını keşfedin ve başvurun.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- How It Works Section -->
+        <section class="how-it-works" id="how-it-works">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-badge">Nasıl Çalışır?</span>
+                    <h2 class="section-title">4 Adımda <span class="gradient-text">Mentorunuzu Bulun</span></h2>
+                    <p class="section-subtitle">Hemen başlamak için sadece birkaç adım yeterli.</p>
+                </div>
+                <div class="steps-container">
+                    <div class="step" data-aos="fade-right">
+                        <div class="step-number">01</div>
+                        <div class="step-content">
+                            <h3>Hesap Oluşturun</h3>
+                            <p>Mentor veya Mentee olarak kaydolun. Kayıt işlemi sadece birkaç dakika sürer.</p>
+                        </div>
+                        <div class="step-icon">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="1.5">
+                                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+                                <circle cx="9" cy="7" r="4" />
+                                <line x1="19" y1="8" x2="19" y2="14" />
+                                <line x1="22" y1="11" x2="16" y2="11" />
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="step-connector"></div>
+                    <div class="step" data-aos="fade-left">
+                        <div class="step-number">02</div>
+                        <div class="step-content">
+                            <h3>Profilinizi Tamamlayın</h3>
+                            <p>Deneyimlerinizi, becerilerinizi ve kariyer hedeflerinizi ekleyin.</p>
+                        </div>
+                        <div class="step-icon">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="1.5">
+                                <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7" />
+                                <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z" />
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="step-connector"></div>
+                    <div class="step" data-aos="fade-right">
+                        <div class="step-number">03</div>
+                        <div class="step-content">
+                            <h3>Mentor Bulun</h3>
+                            <p>AI destekli eşleştirme ile size en uygun mentoru bulun veya mentee'lerle eşleşin.</p>
+                        </div>
+                        <div class="step-icon">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="1.5">
+                                <circle cx="11" cy="11" r="8" />
+                                <line x1="21" y1="21" x2="16.65" y2="16.65" />
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="step-connector"></div>
+                    <div class="step" data-aos="fade-left">
+                        <div class="step-number">04</div>
+                        <div class="step-content">
+                            <h3>Görüşmeye Başlayın</h3>
+                            <p>Randevu oluşturun ve kariyer yolculuğunuzda ilerlemeye başlayın!</p>
+                        </div>
+                        <div class="step-icon">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="1.5">
+                                <polygon points="23 7 16 12 23 17 23 7" />
+                                <rect x="1" y="5" width="15" height="14" rx="2" ry="2" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Benefits Section -->
+        <section class="benefits" id="benefits">
+            <div class="container">
+                <div class="benefits-wrapper">
+                    <!-- Mentor Benefits -->
+                    <div class="benefit-column" data-aos="fade-right">
+                        <div class="benefit-header mentor">
+                            <span class="benefit-badge">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                                    <circle cx="9" cy="7" r="4" />
+                                    <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" />
+                                </svg>
+                                Mentor
+                            </span>
+                            <h3>Mentor Olmanın Avantajları</h3>
+                        </div>
+                        <ul class="benefit-list">
+                            <li>
+                                <div class="benefit-icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <strong>Mentorluk Deneyimi Kazanın</strong>
+                                    <p>Bilgi ve tecrübenizi paylaşarak liderlik becerilerinizi geliştirin.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="benefit-icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <circle cx="12" cy="12" r="10" />
+                                        <circle cx="12" cy="12" r="6" />
+                                        <circle cx="12" cy="12" r="2" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <strong>Kişisel Marka Oluşturun</strong>
+                                    <p>Sektörde tanınırlığınızı artırın ve profesyonel itibarınızı güçlendirin.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="benefit-icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <circle cx="12" cy="12" r="10" />
+                                        <line x1="2" y1="12" x2="22" y2="12" />
+                                        <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <strong>Topluluk Oluşturun</strong>
+                                    <p>Sizden ilham alan bir mentee topluluğu oluşturun.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="benefit-icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <polyline points="23 6 13.5 15.5 8.5 10.5 1 18" />
+                                        <polyline points="17 6 23 6 23 12" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <strong>Profesyonel Gelişim</strong>
+                                    <p>Öğretirken öğrenin, farklı bakış açıları kazanın.</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- Mentee Benefits -->
+                    <div class="benefit-column" data-aos="fade-left">
+                        <div class="benefit-header mentee">
+                            <span class="benefit-badge">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
+                                    <path d="M6 12v5c3 3 9 3 12 0v-5" />
+                                </svg>
+                                Mentee
+                            </span>
+                            <h3>Mentee Olmanın Avantajları</h3>
+                        </div>
+                        <ul class="benefit-list">
+                            <li>
+                                <div class="benefit-icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                                        <circle cx="12" cy="10" r="3" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <strong>Kariyer Yol Haritası</strong>
+                                    <p>Hedeflerinize ulaşmak için kişiselleştirilmiş bir plan oluşturun.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="benefit-icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                                        <circle cx="9" cy="7" r="4" />
+                                        <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <strong>Deneyimli Mentorlarla Bağlantı</strong>
+                                    <p>Sektörün en iyilerinden birebir rehberlik alın.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="benefit-icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <rect x="2" y="2" width="20" height="20" rx="2.18" ry="2.18" />
+                                        <line x1="7" y1="2" x2="7" y2="22" />
+                                        <line x1="17" y1="2" x2="17" y2="22" />
+                                        <line x1="2" y1="12" x2="22" y2="12" />
+                                        <line x1="2" y1="7" x2="7" y2="7" />
+                                        <line x1="2" y1="17" x2="7" y2="17" />
+                                        <line x1="17" y1="17" x2="22" y2="17" />
+                                        <line x1="17" y1="7" x2="22" y2="7" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <strong>AI Destekli Rehberlik</strong>
+                                    <p>7/24 yapay zeka asistanından kariyer tavsiyeleri alın.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="benefit-icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" />
+                                        <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <strong>Networking Fırsatları</strong>
+                                    <p>Sektördeki profesyonellerle değerli bağlantılar kurun.</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats Section -->
+        <section class="stats-section">
+            <div class="container">
+                <div class="stats-grid">
+                    <div class="stat-item" data-aos="zoom-in">
+                        <div class="stat-value" data-count="10000">0</div>
+                        <div class="stat-plus">+</div>
+                        <div class="stat-title">Aktif Kullanıcı</div>
+                    </div>
+                    <div class="stat-item" data-aos="zoom-in" data-aos-delay="100">
+                        <div class="stat-value" data-count="5000">0</div>
+                        <div class="stat-plus">+</div>
+                        <div class="stat-title">Başarılı Eşleştirme</div>
+                    </div>
+                    <div class="stat-item" data-aos="zoom-in" data-aos-delay="200">
+                        <div class="stat-value" data-count="15000">0</div>
+                        <div class="stat-plus">+</div>
+                        <div class="stat-title">Tamamlanan Seans</div>
+                    </div>
+                    <div class="stat-item" data-aos="zoom-in" data-aos-delay="300">
+                        <div class="stat-value" data-count="500">0</div>
+                        <div class="stat-plus">+</div>
+                        <div class="stat-title">Aktif Mentor</div>
+                    </div>
+                    <div class="stat-item" data-aos="zoom-in" data-aos-delay="400">
+                        <div class="stat-value" data-count="8000">0</div>
+                        <div class="stat-plus">+</div>
+                        <div class="stat-title">Kariyer Paylaşımı</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- App Screenshots Section -->
+        <section class="screenshots" id="screenshots">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-badge">Uygulama</span>
+                    <h2 class="section-title">Uygulama <span class="gradient-text">Ekran Görüntüleri</span></h2>
+                    <p class="section-subtitle">Newbie'nin kullanıcı dostu arayüzünü keşfedin.</p>
+                </div>
+                <div class="screenshots-wrapper">
+                    <div class="screenshot-item" data-aos="fade-up">
+                        <img src="görsel/ana sayfa.png" alt="Newbie Ana Sayfa - Size Özel" class="screenshot-img-plain">
+                        <span>Ana Sayfa</span>
+                    </div>
+                    <div class="screenshot-item" data-aos="fade-up" data-aos-delay="100">
+                        <img src="görsel/ai-danisman.png" alt="Newbie AI Danışman" class="screenshot-img-plain">
+                        <span>AI Danışman</span>
+                    </div>
+                    <div class="screenshot-item" data-aos="fade-up" data-aos-delay="200">
+                        <img src="görsel/deneyimler.png" alt="Newbie Deneyimler" class="screenshot-img-plain">
+                        <span>Deneyimler</span>
+                    </div>
+                    <div class="screenshot-item" data-aos="fade-up" data-aos-delay="300">
+                        <img src="görsel/mentörlük.png" alt="Newbie Mentörlük" class="screenshot-img-plain">
+                        <span>Mentörlük</span>
+                    </div>
+                    <div class="screenshot-item" data-aos="fade-up" data-aos-delay="400">
+                        <img src="görsel/topluluklar.png" alt="Newbie Topluluklar" class="screenshot-img-plain">
+                        <span>Topluluklar</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="faq" id="faq">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-badge">SSS</span>
+                    <h2 class="section-title">Sık Sorulan <span class="gradient-text">Sorular</span></h2>
+                    <p class="section-subtitle">Merak ettiğiniz her şey burada.</p>
+                </div>
+                <div class="faq-container">
+                    <div class="faq-item" data-aos="fade-up">
+                        <div class="faq-question">
+                            <span>Newbie ücretsiz mi?</span>
+                            <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Evet! Newbie'nin temel özellikleri tamamen ücretsizdir. Mentor araması, AI kariyer
+                                asistanı ve topluluk özellikleri ücretsiz olarak kullanılabilir. Premium özellikler için
+                                opsiyonel abonelik seçenekleri mevcuttur.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item" data-aos="fade-up" data-aos-delay="100">
+                        <div class="faq-question">
+                            <span>Mentor olmak için ne gerekiyor?</span>
+                            <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Mentor olmak için en az 3 yıl profesyonel deneyim, LinkedIn profili ve kısa bir başvuru
+                                formu doldurmanız yeterli. Başvurunuz ekibimiz tarafından değerlendirilir ve
+                                onaylandıktan sonra mentor olarak faaliyete başlayabilirsiniz.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item" data-aos="fade-up" data-aos-delay="200">
+                        <div class="faq-question">
+                            <span>Güvenliğim nasıl sağlanıyor?</span>
+                            <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Tüm kullanıcı verileri SSL şifreleme ile korunur. Mentor profilleri doğrulanır ve
+                                kullanıcı yorumları/puanları şeffaf bir şekilde gösterilir. Ayrıca şüpheli aktiviteleri
+                                tespit eden güvenlik sistemimiz 7/24 aktiftir.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item" data-aos="fade-up" data-aos-delay="300">
+                        <div class="faq-question">
+                            <span>Eşleştirme nasıl yapılıyor?</span>
+                            <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Eşleştirme işlemi kullanıcılar tarafından yapılır. Mentorlar sekmesinden size uygun mentorları filtreleyerek, uzmanlık alanlarına, deneyimlerine ve kullanıcı puanlarına göre arama yapabilirsiniz. İstediğiniz mentoru seçerek görüşme talep edebilirsiniz.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item" data-aos="fade-up" data-aos-delay="400">
+                        <div class="faq-question">
+                            <span>Görüşmeleri iptal edebilir miyim?</span>
+                            <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Evet, görüşmelerinizi en az 24 saat öncesinden ücretsiz olarak iptal edebilirsiniz. 24
+                                saatten az bir süre kala yapılan iptallerde, tekrar eden durumlar için hesabınıza uyarı
+                                verilebilir.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Download Section -->
+        <section class="download" id="download">
+            <div class="download-bg"></div>
+            <div class="container">
+                <div class="download-content">
+                    <span class="section-badge light">Hemen İndirin</span>
+                    <h2>Kariyer Yolculuğunuza <br><span>Bugün Başlayın</span></h2>
+                    <p>Newbie uygulamasını indirin ve binlerce mentor arasından size en uygun olanı bulun.</p>
+                    <div class="download-buttons">
+                        <a href="#" class="store-button">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z" />
+                            </svg>
+                            <div class="store-text">
+                                <span>App Store'dan</span>
+                                <strong>İndirin</strong>
+                            </div>
+                        </a>
+                        <a href="#" class="store-button">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.9 20.18,13.18L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z" />
+                            </svg>
+                            <div class="store-text">
+                                <span>Google Play'den</span>
+                                <strong>İndirin</strong>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="qr-section">
+                        <div class="qr-code">
+                            <svg width="120" height="120" viewBox="0 0 120 120">
+                                <rect width="120" height="120" fill="white" rx="8" />
+                                <rect x="10" y="10" width="30" height="30" fill="#131922" />
+                                <rect x="15" y="15" width="20" height="20" fill="white" />
+                                <rect x="20" y="20" width="10" height="10" fill="#131922" />
+                                <rect x="80" y="10" width="30" height="30" fill="#131922" />
+                                <rect x="85" y="15" width="20" height="20" fill="white" />
+                                <rect x="90" y="20" width="10" height="10" fill="#131922" />
+                                <rect x="10" y="80" width="30" height="30" fill="#131922" />
+                                <rect x="15" y="85" width="20" height="20" fill="white" />
+                                <rect x="20" y="90" width="10" height="10" fill="#131922" />
+                                <rect x="50" y="10" width="10" height="10" fill="#131922" />
+                                <rect x="50" y="30" width="10" height="10" fill="#131922" />
+                                <rect x="50" y="50" width="10" height="10" fill="#131922" />
+                                <rect x="60" y="20" width="10" height="10" fill="#131922" />
+                                <rect x="60" y="40" width="10" height="10" fill="#131922" />
+                                <rect x="10" y="50" width="10" height="10" fill="#131922" />
+                                <rect x="30" y="50" width="10" height="10" fill="#131922" />
+                                <rect x="80" y="50" width="10" height="10" fill="#131922" />
+                                <rect x="100" y="50" width="10" height="10" fill="#131922" />
+                                <rect x="50" y="80" width="10" height="10" fill="#131922" />
+                                <rect x="60" y="90" width="10" height="10" fill="#131922" />
+                                <rect x="80" y="80" width="10" height="10" fill="#131922" />
+                                <rect x="90" y="70" width="10" height="10" fill="#131922" />
+                                <rect x="100" y="90" width="10" height="10" fill="#131922" />
+                                <rect x="70" y="70" width="10" height="10" fill="#131922" />
+                            </svg>
+                        </div>
+                        <span>QR Kod ile İndirin</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section class="about" id="about">
+            <div class="container">
+                <div class="about-grid">
+                    <!-- Left Column -->
+                    <div class="about-left" data-aos="fade-right">
+                        <a href="#about" class="about-breadcrumb">Hakkımızda</a>
+                        <h2 class="about-heading">Hikayemiz</h2>
+                        <p class="about-story">
+                            Newbie, "I am still learning" (Hâlâ öğreniyorum) felsefesinden ilham alarak hayata geçirildi. Her başarılı profesyonelin ardında bir
+                            mentor olduğuna inanıyor, kariyer gelişiminde eşit fırsatlar yaratmayı hedefliyoruz.
+                        </p>
+                        <p class="about-story">
+                            Yapay zeka teknolojisini insan deneyimi ile harmanlayarak, kariyer yolculuğundaki
+                            her bireye deneyimli mentorlarla buluşma fırsatı sunuyoruz. Amacımız, öğrenme ve
+                            gelişim kültürünü yaygınlaştırarak profesyonel başarıya giden yolu kolaylaştırmak.
+                        </p>
+
+                        <div class="about-values">
+                            <div class="value-item">
+                                <div class="value-icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <circle cx="12" cy="12" r="10" />
+                                        <circle cx="12" cy="12" r="6" />
+                                        <circle cx="12" cy="12" r="2" />
+                                    </svg>
+                                </div>
+                                <div class="value-content">
+                                    <h4>Misyon</h4>
+                                    <p>Kariyer gelişiminde eşit fırsatlar sunarak, herkesin potansiyelini
+                                        gerçekleştirmesine olanak sağlamak.</p>
+                                </div>
+                            </div>
+                            <div class="value-item">
+                                <div class="value-icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+                                        <circle cx="12" cy="12" r="3" />
+                                    </svg>
+                                </div>
+                                <div class="value-content">
+                                    <h4>Vizyon</h4>
+                                    <p>Dünyanın en kapsamlı ve etkili mentorluk ekosistemi olarak, profesyonel gelişime
+                                        öncülük etmek.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Column - Quote Card -->
+                    <div class="about-right" data-aos="fade-left">
+                        <div class="quote-card-dark">
+                            <div class="quote-icon-large">"</div>
+                            <h3 class="quote-text-dark">I am still learning...</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="contact" id="contact">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-badge">İletişim</span>
+                    <h2 class="section-title">Bizimle <span class="gradient-text">İletişime Geçin</span></h2>
+                    <p class="section-subtitle">Sorularınız için bize ulaşın, en kısa sürede yanıt verelim.</p>
+                </div>
+                <div class="contact-wrapper">
+                    <div class="contact-info" data-aos="fade-right">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path
+                                        d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                                    <polyline points="22,6 12,13 2,6" />
+                                </svg>
+                            </div>
+                            <div>
+                                <strong>E-posta</strong>
+                                <a href="mailto:getnewbieapp@gmail.com">getnewbieapp@gmail.com</a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                                    <circle cx="12" cy="10" r="3" />
+                                </svg>
+                            </div>
+                            <div>
+                                <strong>Adres</strong>
+                                <span>İstanbul, Türkiye</span>
+                            </div>
+                        </div>
+                        <div class="social-links">
+                            <a href="#" class="social-link" aria-label="Instagram">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                                </svg>
+                            </a>
+                            <a href="#" class="social-link" aria-label="Twitter">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                                </svg>
+                            </a>
+                            <a href="#" class="social-link" aria-label="LinkedIn">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                                </svg>
+                            </a>
+                            <a href="#" class="social-link" aria-label="YouTube">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                    <form class="contact-form" data-aos="fade-left">
+                        <div class="form-group">
+                            <label for="name">Ad Soyad</label>
+                            <input type="text" id="name" name="name" placeholder="Adınız Soyadınız" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">E-posta</label>
+                            <input type="email" id="email" name="email" placeholder="ornek@email.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Konu</label>
+                            <select id="subject" name="subject" required>
+                                <option value="">Konu Seçin</option>
+                                <option value="general">Genel Soru</option>
+                                <option value="support">Teknik Destek</option>
+                                <option value="mentor">Mentor Başvurusu</option>
+                                <option value="partnership">İş Birliği</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Mesaj</label>
+                            <textarea id="message" name="message" rows="5" placeholder="Mesajınızı yazın..."
+                                required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-lg">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <line x1="22" y1="2" x2="11" y2="13" />
+                                <polygon points="22 2 15 22 11 13 2 9 22 2" />
+                            </svg>
+                            Mesaj Gönder
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <a href="#" class="footer-logo">
+                        <img src="newbie (500 x 250).png" alt="Newbie Logo">
+                    </a>
+                    <p>I am still learning</p>
+                    <p class="footer-desc">Kariyer yolculuğunuzda yanınızdayız. AI destekli mentorluk platformu.</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Platform</h4>
+                        <ul>
+                            <li><a href="#features">Özellikler</a></li>
+                            <li><a href="#how-it-works">Nasıl Çalışır?</a></li>
+                            <li><a href="#benefits">Avantajlar</a></li>
+                            <li><a href="#download">İndir</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Şirket</h4>
+                        <ul>
+                            <li><a href="#about">Hakkımızda</a></li>
+                            <li><a href="#">Kariyer</a></li>
+                            <li><a href="#">Blog</a></li>
+                            <li><a href="#contact">İletişim</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Destek</h4>
+                        <ul>
+                            <li><a href="#faq">SSS</a></li>
+                            <li><a href="#">Yardım Merkezi</a></li>
+                            <li><a href="#">Güvenlik</a></li>
+                            <li><a href="#">Geri Bildirim</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Yasal</h4>
+                        <ul>
+                            <li><a href="gizlilik-politikasi.html">Gizlilik Politikası</a></li>
+                            <li><a href="kullanim-kosullari.html">Kullanım Koşulları</a></li>
+                            <li><a href="kvkk.html">KVKK</a></li>
+                            <li><a href="cerez-politikasi.html">Çerez Politikası</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 Newbie. Tüm hakları saklıdır.</p>
+                <div class="footer-social">
+                    <a href="#" aria-label="Instagram">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                        </svg>
+                    </a>
+                    <a href="#" aria-label="Twitter">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                        </svg>
+                    </a>
+                    <a href="#" aria-label="LinkedIn">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                        </svg>
+                    </a>
+                    <a href="#" aria-label="YouTube">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
