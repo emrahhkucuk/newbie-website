@@ -1,0 +1,1198 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Newbie - Güvenli Ödeme Sayfası">
+    <title>Güvenli Ödeme | Newbie</title>
+    <link rel="icon" type="image/png" href="newbie_seffaf.png">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* ========================================
+           CSS Variables (from main site)
+           ======================================== */
+        :root {
+            --primary: #131922;
+            --primary-light: #1e2633;
+            --primary-dark: #0a0e14;
+            --secondary: #4f6ef7;
+            --secondary-light: #6b85f9;
+            --accent: #00d4aa;
+            --white: #ffffff;
+            --gray-50: #f8f9fc;
+            --gray-100: #f1f3f8;
+            --gray-200: #e5e8f0;
+            --gray-300: #d1d5e0;
+            --gray-400: #9aa3b8;
+            --gray-500: #6b7589;
+            --gray-600: #4a5368;
+            --gray-700: #343c4f;
+            --text-primary: #131922;
+            --text-secondary: #6b7589;
+            --gradient-primary: linear-gradient(135deg, #4f6ef7 0%, #6b85f9 50%, #00d4aa 100%);
+            --shadow-sm: 0 1px 2px rgba(19, 25, 34, 0.05);
+            --shadow-md: 0 4px 12px rgba(19, 25, 34, 0.1);
+            --shadow-lg: 0 10px 40px rgba(19, 25, 34, 0.15);
+            --radius-sm: 8px;
+            --radius-md: 12px;
+            --radius-lg: 16px;
+            --radius-xl: 24px;
+            --radius-full: 9999px;
+            --font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        html { scroll-behavior: smooth; font-size: 16px; }
+
+        body {
+            font-family: var(--font-family);
+            color: var(--text-primary);
+            background-color: var(--gray-50);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            min-height: 100vh;
+        }
+
+        a { text-decoration: none; color: inherit; }
+        img { max-width: 100%; height: auto; display: block; }
+
+        /* ========================================
+           Header
+           ======================================== */
+        .header {
+            background: var(--white);
+            border-bottom: 1px solid var(--gray-200);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            padding: 0 24px;
+        }
+
+        .header-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            height: 64px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .header-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .header-logo img {
+            height: 32px;
+            width: auto;
+        }
+
+        .header-logo span {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+
+        .header-security {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--gray-500);
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        .header-security svg {
+            color: var(--accent);
+        }
+
+        .ssl-badge {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(0, 212, 170, 0.08);
+            border: 1px solid rgba(0, 212, 170, 0.25);
+            border-radius: var(--radius-full);
+            padding: 5px 12px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: #00a882;
+        }
+
+        /* ========================================
+           Layout
+           ======================================== */
+        .payment-page {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 40px 24px 80px;
+        }
+
+        .payment-grid {
+            display: grid;
+            grid-template-columns: 1fr 440px;
+            gap: 32px;
+            align-items: start;
+        }
+
+        /* ========================================
+           Order Summary (Left)
+           ======================================== */
+        .card {
+            background: var(--white);
+            border-radius: var(--radius-xl);
+            border: 1px solid var(--gray-200);
+            box-shadow: var(--shadow-sm);
+            overflow: hidden;
+        }
+
+        .card-header {
+            padding: 24px 28px 20px;
+            border-bottom: 1px solid var(--gray-100);
+        }
+
+        .card-header h2 {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .card-header h2 svg {
+            color: var(--secondary);
+        }
+
+        .card-body {
+            padding: 24px 28px;
+        }
+
+        /* Session Info */
+        .session-info {
+            display: flex;
+            gap: 16px;
+            margin-bottom: 24px;
+            padding-bottom: 24px;
+            border-bottom: 1px solid var(--gray-100);
+        }
+
+        .session-avatar {
+            width: 56px;
+            height: 56px;
+            border-radius: var(--radius-md);
+            background: var(--gradient-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: white;
+            flex-shrink: 0;
+            letter-spacing: -0.5px;
+        }
+
+        .session-meta {
+            flex: 1;
+        }
+
+        .session-title {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 4px;
+            line-height: 1.3;
+        }
+
+        .session-mentor {
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+            margin-bottom: 8px;
+        }
+
+        .session-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+
+        .tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            padding: 3px 10px;
+            background: var(--gray-100);
+            border-radius: var(--radius-full);
+            font-size: 0.775rem;
+            font-weight: 600;
+            color: var(--gray-600);
+        }
+
+        .tag.accent {
+            background: rgba(79, 110, 247, 0.08);
+            color: var(--secondary);
+        }
+
+        /* Session Details */
+        .detail-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid var(--gray-100);
+        }
+
+        .detail-row:last-child { border-bottom: none; }
+
+        .detail-label {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+
+        .detail-label svg { color: var(--gray-400); }
+
+        .detail-value {
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        /* Price Breakdown */
+        .price-section {
+            margin-top: 24px;
+            padding-top: 20px;
+            border-top: 1px solid var(--gray-200);
+        }
+
+        .price-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+            font-size: 0.9rem;
+        }
+
+        .price-row span:first-child { color: var(--text-secondary); }
+        .price-row span:last-child { font-weight: 600; color: var(--text-primary); }
+
+        .price-row.discount span:last-child { color: #00a882; }
+
+        .price-total {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 14px;
+            padding-top: 14px;
+            border-top: 2px solid var(--gray-200);
+        }
+
+        .price-total-label {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+
+        .price-total-amount {
+            font-size: 1.5rem;
+            font-weight: 800;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Trust badges */
+        .trust-badges {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid var(--gray-100);
+            flex-wrap: wrap;
+        }
+
+        .trust-badge {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 0.775rem;
+            font-weight: 600;
+            color: var(--gray-500);
+        }
+
+        .trust-badge svg { color: var(--accent); }
+
+        /* ========================================
+           Payment Form (Right)
+           ======================================== */
+        .payment-card-header {
+            background: var(--primary);
+            padding: 24px 28px;
+        }
+
+        .payment-card-header h2 {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 4px;
+        }
+
+        .payment-card-header p {
+            font-size: 0.825rem;
+            color: rgba(255,255,255,0.55);
+        }
+
+        .paytr-badge {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            margin-top: 12px;
+        }
+
+        .paytr-badge span {
+            font-size: 0.775rem;
+            color: rgba(255,255,255,0.5);
+            font-weight: 500;
+        }
+
+        .paytr-logo-box {
+            background: rgba(255,255,255,0.12);
+            border: 1px solid rgba(255,255,255,0.15);
+            border-radius: 6px;
+            padding: 4px 10px;
+            font-size: 0.8rem;
+            font-weight: 800;
+            color: var(--white);
+            letter-spacing: 0.05em;
+        }
+
+        /* Card Visual */
+        .card-visual {
+            margin: 24px 28px 0;
+            height: 130px;
+            background: linear-gradient(135deg, #1a2744 0%, #2d3f6e 50%, #1e3a5f 100%);
+            border-radius: var(--radius-lg);
+            padding: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card-visual::before {
+            content: '';
+            position: absolute;
+            top: -40px;
+            right: -40px;
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            background: rgba(79, 110, 247, 0.2);
+        }
+
+        .card-visual::after {
+            content: '';
+            position: absolute;
+            bottom: -60px;
+            left: -20px;
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            background: rgba(0, 212, 170, 0.1);
+        }
+
+        .card-chip {
+            width: 34px;
+            height: 26px;
+            background: linear-gradient(135deg, #e8c97e, #c8a84b);
+            border-radius: 5px;
+            margin-bottom: 16px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .card-number-preview {
+            font-family: 'Space Grotesk', monospace;
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: rgba(255,255,255,0.9);
+            letter-spacing: 0.2em;
+            position: relative;
+            z-index: 1;
+        }
+
+        .card-holder-preview {
+            font-size: 0.75rem;
+            color: rgba(255,255,255,0.5);
+            margin-top: 6px;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Form */
+        .form-body {
+            padding: 20px 28px 28px;
+        }
+
+        .form-group {
+            margin-bottom: 16px;
+        }
+
+        .form-label {
+            display: block;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--gray-600);
+            margin-bottom: 6px;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 12px 14px;
+            border: 1.5px solid var(--gray-200);
+            border-radius: var(--radius-md);
+            font-size: 0.95rem;
+            font-family: var(--font-family);
+            color: var(--text-primary);
+            background: var(--white);
+            transition: border-color 0.2s, box-shadow 0.2s;
+            outline: none;
+        }
+
+        .form-input::placeholder { color: var(--gray-400); }
+
+        .form-input:focus {
+            border-color: var(--secondary);
+            box-shadow: 0 0 0 3px rgba(79, 110, 247, 0.1);
+        }
+
+        .form-input.card-number-input {
+            font-family: 'Space Grotesk', monospace;
+            letter-spacing: 0.1em;
+            font-size: 1.05rem;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+
+        .input-with-icon {
+            position: relative;
+        }
+
+        .input-icon {
+            position: absolute;
+            right: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--gray-400);
+            pointer-events: none;
+        }
+
+        /* Card logos */
+        .card-logos {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 16px;
+        }
+
+        .card-logo {
+            height: 28px;
+            width: 44px;
+            border: 1.5px solid var(--gray-200);
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.65rem;
+            font-weight: 800;
+            background: var(--white);
+        }
+
+        .card-logo.visa { color: #1a1f71; }
+        .card-logo.mc { color: #eb001b; }
+        .card-logo.troy { color: #1a3a6e; font-size: 0.6rem; }
+
+        /* Submit Button */
+        .btn-pay {
+            width: 100%;
+            padding: 16px 24px;
+            background: var(--gradient-primary);
+            color: var(--white);
+            border: none;
+            border-radius: var(--radius-full);
+            font-size: 1rem;
+            font-weight: 700;
+            font-family: var(--font-family);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 20px;
+            transition: opacity 0.2s, transform 0.2s;
+            box-shadow: 0 8px 24px rgba(79, 110, 247, 0.35);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-pay:hover {
+            opacity: 0.92;
+            transform: translateY(-1px);
+            box-shadow: 0 12px 32px rgba(79, 110, 247, 0.4);
+        }
+
+        .btn-pay:active {
+            transform: translateY(0);
+        }
+
+        .btn-pay .amount {
+            background: rgba(255,255,255,0.18);
+            border-radius: var(--radius-full);
+            padding: 3px 12px;
+            font-size: 0.95rem;
+        }
+
+        /* Loading state */
+        .btn-pay.loading {
+            pointer-events: none;
+            opacity: 0.8;
+        }
+
+        .spinner {
+            width: 18px;
+            height: 18px;
+            border: 2px solid rgba(255,255,255,0.3);
+            border-top-color: white;
+            border-radius: 50%;
+            animation: spin 0.7s linear infinite;
+            display: none;
+        }
+
+        .btn-pay.loading .spinner { display: block; }
+        .btn-pay.loading .btn-text { display: none; }
+
+        @keyframes spin { to { transform: rotate(360deg); } }
+
+        /* Security note */
+        .security-note {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            justify-content: center;
+            margin-top: 14px;
+            font-size: 0.775rem;
+            color: var(--gray-500);
+        }
+
+        .security-note svg { color: #00a882; flex-shrink: 0; }
+
+        /* Installment */
+        .installment-section {
+            margin-top: 16px;
+            padding: 14px;
+            background: var(--gray-50);
+            border-radius: var(--radius-md);
+            border: 1px solid var(--gray-200);
+        }
+
+        .installment-title {
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: var(--text-secondary);
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .installment-options {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 6px;
+        }
+
+        .installment-option {
+            padding: 8px 6px;
+            border: 1.5px solid var(--gray-200);
+            border-radius: var(--radius-sm);
+            text-align: center;
+            cursor: pointer;
+            background: var(--white);
+            transition: all 0.15s;
+        }
+
+        .installment-option:hover {
+            border-color: var(--secondary);
+            background: rgba(79,110,247,0.04);
+        }
+
+        .installment-option.selected {
+            border-color: var(--secondary);
+            background: rgba(79,110,247,0.06);
+        }
+
+        .installment-count {
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: var(--secondary);
+            display: block;
+        }
+
+        .installment-amount {
+            font-size: 0.7rem;
+            color: var(--text-secondary);
+        }
+
+        /* ========================================
+           Page title
+           ======================================== */
+        .page-title {
+            margin-bottom: 28px;
+        }
+
+        .page-title h1 {
+            font-size: 1.6rem;
+            font-weight: 800;
+            color: var(--text-primary);
+            margin-bottom: 6px;
+        }
+
+        .page-title p {
+            color: var(--text-secondary);
+            font-size: 0.925rem;
+        }
+
+        .breadcrumb {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.825rem;
+            color: var(--gray-400);
+            margin-bottom: 12px;
+        }
+
+        .breadcrumb a {
+            color: var(--secondary);
+            font-weight: 500;
+        }
+
+        .breadcrumb a:hover { text-decoration: underline; }
+
+        /* ========================================
+           Footer
+           ======================================== */
+        .payment-footer {
+            text-align: center;
+            margin-top: 48px;
+            padding-top: 24px;
+            border-top: 1px solid var(--gray-200);
+            color: var(--gray-400);
+            font-size: 0.8rem;
+        }
+
+        .payment-footer a {
+            color: var(--secondary);
+        }
+
+        .payment-footer a:hover { text-decoration: underline; }
+
+        /* ========================================
+           Responsive
+           ======================================== */
+        @media (max-width: 860px) {
+            .payment-grid {
+                grid-template-columns: 1fr;
+            }
+
+            /* On mobile, form comes first */
+            .payment-form-col { order: -1; }
+        }
+
+        @media (max-width: 480px) {
+            .payment-page { padding: 24px 16px 60px; }
+            .card-body, .form-body { padding: 20px; }
+            .card-header, .payment-card-header { padding: 20px; }
+            .form-row { grid-template-columns: 1fr; }
+            .page-title h1 { font-size: 1.3rem; }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="header-inner">
+            <a href="https://getnewbie.com" class="header-logo">
+                <img src="newbie_seffaf.png" alt="Newbie Logo">
+                <span>newbie</span>
+            </a>
+            <div class="header-security">
+                <div class="ssl-badge">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                        <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                        <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                    </svg>
+                    256-bit SSL Güvenli Ödeme
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main -->
+    <main class="payment-page">
+
+        <!-- Breadcrumb & Title -->
+        <div class="page-title">
+            <div class="breadcrumb">
+                <a href="https://getnewbie.com">Ana Sayfa</a>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+                <span>Mentorluk Seansı</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+                <span>Güvenli Ödeme</span>
+            </div>
+            <h1>Güvenli Ödeme</h1>
+            <p>Seans rezervasyonunuzu tamamlamak için ödeme bilgilerinizi girin.</p>
+        </div>
+
+        <div class="payment-grid">
+
+            <!-- Left: Order Summary -->
+            <div class="order-col">
+
+                <!-- Session Info Card -->
+                <div class="card" style="margin-bottom: 20px;">
+                    <div class="card-header">
+                        <h2>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                                <line x1="16" y1="2" x2="16" y2="6"></line>
+                                <line x1="8" y1="2" x2="8" y2="6"></line>
+                                <line x1="3" y1="10" x2="21" y2="10"></line>
+                            </svg>
+                            Seans Bilgileri
+                        </h2>
+                    </div>
+                    <div class="card-body">
+                        <div class="session-info">
+                            <div class="session-avatar" id="mentorAvatar">AY</div>
+                            <div class="session-meta">
+                                <div class="session-title" id="sessionTitle">Kariyer Yol Haritası & CV İnceleme</div>
+                                <div class="session-mentor" id="mentorName">Mentor: Ahmet Yılmaz</div>
+                                <div class="session-tags">
+                                    <span class="tag accent">
+                                        <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                        Onaylandı
+                                    </span>
+                                    <span class="tag" id="sessionType">Online</span>
+                                    <span class="tag" id="sessionDuration">60 dk</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="detail-row">
+                            <div class="detail-label">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <polyline points="12 6 12 12 16 14"></polyline>
+                                </svg>
+                                Seans Tarihi
+                            </div>
+                            <div class="detail-value" id="sessionDate">—</div>
+                        </div>
+
+                        <div class="detail-row">
+                            <div class="detail-label">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                    <circle cx="12" cy="10" r="3"></circle>
+                                </svg>
+                                Seans Türü
+                            </div>
+                            <div class="detail-value" id="meetingType">Online (Google Meet)</div>
+                        </div>
+
+                        <div class="detail-row">
+                            <div class="detail-label">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                    <circle cx="12" cy="7" r="4"></circle>
+                                </svg>
+                                Katılımcı
+                            </div>
+                            <div class="detail-value" id="menteeName">Sen</div>
+                        </div>
+
+                        <div class="detail-row">
+                            <div class="detail-label">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                                </svg>
+                                Rezervasyon No
+                            </div>
+                            <div class="detail-value" id="bookingRef" style="font-family: monospace; font-size: 0.8rem; color: var(--gray-500);">#NB-2024-00001</div>
+                        </div>
+
+                        <!-- Price Breakdown -->
+                        <div class="price-section">
+                            <div class="price-row">
+                                <span>Seans ücreti</span>
+                                <span id="basePrice">₺1.000,00</span>
+                            </div>
+                            <div class="price-row">
+                                <span>Platform hizmet bedeli</span>
+                                <span>₺0,00</span>
+                            </div>
+                            <div class="price-total">
+                                <span class="price-total-label">Toplam</span>
+                                <span class="price-total-amount" id="totalPrice">₺1.000,00</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Trust Badges Card -->
+                <div class="card">
+                    <div class="card-body" style="padding: 20px 24px;">
+                        <div class="trust-badges">
+                            <div class="trust-badge">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                                    <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                                </svg>
+                                SSL Şifreli
+                            </div>
+                            <div class="trust-badge">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                                </svg>
+                                3D Secure
+                            </div>
+                            <div class="trust-badge">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                                PCI DSS Uyumlu
+                            </div>
+                            <div class="trust-badge">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <polyline points="12 6 12 12 16 14"></polyline>
+                                </svg>
+                                7/24 Destek
+                            </div>
+                        </div>
+                        <p style="text-align: center; font-size: 0.775rem; color: var(--gray-400); margin-top: 14px; line-height: 1.5;">
+                            Ödeme işleminiz <strong style="color: var(--gray-500);">PayTR</strong> altyapısı üzerinden güvenle gerçekleştirilmektedir.
+                            Kart bilgileriniz şifreli olarak işlenir ve saklanmaz.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Right: Payment Form -->
+            <div class="payment-form-col">
+                <div class="card">
+                    <div class="payment-card-header">
+                        <h2>Kart Bilgileri</h2>
+                        <p>Tüm kart bilgileriniz güvenle şifrelenmektedir.</p>
+                        <div class="paytr-badge">
+                            <span>Altyapı:</span>
+                            <div class="paytr-logo-box">PayTR</div>
+                        </div>
+                    </div>
+
+                    <!-- Card Visual -->
+                    <div class="card-visual">
+                        <div class="card-chip"></div>
+                        <div class="card-number-preview" id="cardPreviewNumber">•••• •••• •••• ••••</div>
+                        <div class="card-holder-preview" id="cardPreviewHolder">AD SOYAD</div>
+                    </div>
+
+                    <!-- Card Logos -->
+                    <div style="padding: 16px 28px 0; display: flex; gap: 8px; align-items: center;">
+                        <div class="card-logo visa">VISA</div>
+                        <div class="card-logo mc" style="font-size: 0.6rem; line-height: 1.1; text-align: center;">MASTER<br>CARD</div>
+                        <div class="card-logo troy">TROY</div>
+                        <div style="margin-left: auto; display: flex; align-items: center; gap: 5px;">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#00a882" stroke-width="2">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                            </svg>
+                            <span style="font-size: 0.75rem; color: #00a882; font-weight: 700;">3D Secure</span>
+                        </div>
+                    </div>
+
+                    <!-- Form -->
+                    <div class="form-body">
+                        <form id="paymentForm" onsubmit="handlePayment(event)" autocomplete="off">
+
+                            <div class="form-group">
+                                <label class="form-label" for="cardHolder">Kart Üzerindeki İsim</label>
+                                <div class="input-with-icon">
+                                    <input
+                                        type="text"
+                                        id="cardHolder"
+                                        class="form-input"
+                                        placeholder="Ad Soyad"
+                                        autocomplete="cc-name"
+                                        oninput="updateCardPreview()"
+                                        required
+                                    >
+                                    <span class="input-icon">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                            <circle cx="12" cy="7" r="4"></circle>
+                                        </svg>
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label" for="cardNumber">Kart Numarası</label>
+                                <div class="input-with-icon">
+                                    <input
+                                        type="tel"
+                                        id="cardNumber"
+                                        class="form-input card-number-input"
+                                        placeholder="0000 0000 0000 0000"
+                                        maxlength="19"
+                                        autocomplete="cc-number"
+                                        oninput="formatCardNumber(this); updateCardPreview()"
+                                        required
+                                    >
+                                    <span class="input-icon">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect>
+                                            <line x1="1" y1="10" x2="23" y2="10"></line>
+                                        </svg>
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label class="form-label" for="expiry">Son Kullanma Tarihi</label>
+                                    <input
+                                        type="tel"
+                                        id="expiry"
+                                        class="form-input"
+                                        placeholder="AA / YY"
+                                        maxlength="7"
+                                        autocomplete="cc-exp"
+                                        oninput="formatExpiry(this)"
+                                        required
+                                    >
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label" for="cvv">CVV / CVC</label>
+                                    <div class="input-with-icon">
+                                        <input
+                                            type="tel"
+                                            id="cvv"
+                                            class="form-input"
+                                            placeholder="•••"
+                                            maxlength="3"
+                                            autocomplete="cc-csc"
+                                            required
+                                        >
+                                        <span class="input-icon" title="Kartınızın arkasındaki 3 haneli güvenlik kodu">
+                                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                <circle cx="12" cy="12" r="10"></circle>
+                                                <line x1="12" y1="8" x2="12" y2="12"></line>
+                                                <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                                            </svg>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Installment -->
+                            <div class="installment-section">
+                                <div class="installment-title">
+                                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <line x1="12" y1="1" x2="12" y2="23"></line>
+                                        <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                                    </svg>
+                                    Taksit Seçeneği
+                                </div>
+                                <div class="installment-options" id="installmentOptions">
+                                    <div class="installment-option selected" onclick="selectInstallment(this, 1)">
+                                        <span class="installment-count">Tek Çekim</span>
+                                        <div class="installment-amount" id="price1x">₺1.000</div>
+                                    </div>
+                                    <div class="installment-option" onclick="selectInstallment(this, 3)">
+                                        <span class="installment-count">3 Taksit</span>
+                                        <div class="installment-amount" id="price3x">₺ –</div>
+                                    </div>
+                                    <div class="installment-option" onclick="selectInstallment(this, 6)">
+                                        <span class="installment-count">6 Taksit</span>
+                                        <div class="installment-amount" id="price6x">₺ –</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <button type="submit" class="btn-pay" id="payButton">
+                                <span class="btn-text" style="display: flex; align-items: center; gap: 10px;">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                                        <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                                    </svg>
+                                    Güvenli Öde
+                                    <span class="amount" id="payButtonAmount">₺1.000,00</span>
+                                </span>
+                                <div class="spinner"></div>
+                            </button>
+
+                        </form>
+
+                        <div class="security-note">
+                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                            </svg>
+                            Kart bilgileriniz 256-bit SSL ile şifrelenmekte ve saklanmamaktadır.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Footer -->
+        <div class="payment-footer">
+            <p>
+                © 2025 Newbie ·
+                <a href="https://getnewbie.com/gizlilik-politikasi.html">Gizlilik Politikası</a> ·
+                <a href="https://getnewbie.com/kullanim-kosullari.html">Kullanım Koşulları</a> ·
+                <a href="https://getnewbie.com/kvkk.html">KVKK</a>
+            </p>
+            <p style="margin-top: 6px;">Ödeme altyapısı <strong>PayTR</strong> tarafından sağlanmaktadır.</p>
+        </div>
+
+    </main>
+
+    <script>
+        // ============================================
+        // URL parametrelerinden seans bilgisi oku
+        // ============================================
+        const params = new URLSearchParams(window.location.search);
+        const bookingId   = params.get('booking') || 'NB-2024-00001';
+        const sessionName = params.get('session') || 'Kariyer Yol Haritası & CV İnceleme';
+        const mentorName  = params.get('mentor')  || 'Ahmet Yılmaz';
+        const amount      = parseFloat(params.get('amount') || '1000');
+        const dateStr     = params.get('date')    || '';
+        const duration    = params.get('duration')|| '60';
+        const meetType    = params.get('meet')    || 'Online';
+
+        // Baş harfler (avatar için)
+        const initials = mentorName.split(' ').map(w => w[0]).join('').toUpperCase().slice(0,2);
+
+        // Sayfayı doldur
+        document.getElementById('sessionTitle').textContent  = sessionName;
+        document.getElementById('mentorName').textContent    = 'Mentor: ' + mentorName;
+        document.getElementById('mentorAvatar').textContent  = initials;
+        document.getElementById('bookingRef').textContent    = '#NB-' + bookingId;
+        document.getElementById('sessionType').textContent   = meetType;
+        document.getElementById('sessionDuration').textContent = duration + ' dk';
+        document.getElementById('meetingType').textContent   = meetType === 'Online' ? 'Online (Google Meet)' : meetType;
+
+        if (dateStr) {
+            const d = new Date(dateStr);
+            const opts = { day: 'numeric', month: 'long', year: 'numeric', hour: '2-digit', minute: '2-digit' };
+            document.getElementById('sessionDate').textContent = d.toLocaleDateString('tr-TR', opts);
+        }
+
+        // Fiyat göster
+        const fmt = v => '₺' + v.toLocaleString('tr-TR', { minimumFractionDigits: 2 });
+        document.getElementById('basePrice').textContent     = fmt(amount);
+        document.getElementById('totalPrice').textContent    = fmt(amount);
+        document.getElementById('payButtonAmount').textContent = fmt(amount);
+        document.getElementById('price1x').textContent      = fmt(amount);
+
+        // ============================================
+        // Kart önizleme
+        // ============================================
+        function updateCardPreview() {
+            const num    = document.getElementById('cardNumber').value || '•••• •••• •••• ••••';
+            const holder = document.getElementById('cardHolder').value.toUpperCase() || 'AD SOYAD';
+            const padded = num.replace(/\d(?=\d)/g, '•').padEnd(19, '•');
+            document.getElementById('cardPreviewNumber').textContent = padded || '•••• •••• •••• ••••';
+            document.getElementById('cardPreviewHolder').textContent = holder;
+        }
+
+        // ============================================
+        // Kart numarası formatlama
+        // ============================================
+        function formatCardNumber(input) {
+            let val = input.value.replace(/\D/g, '').slice(0, 16);
+            input.value = val.replace(/(.{4})/g, '$1 ').trim();
+        }
+
+        // ============================================
+        // Son kullanma tarihi formatlama
+        // ============================================
+        function formatExpiry(input) {
+            let val = input.value.replace(/\D/g, '').slice(0, 4);
+            if (val.length >= 2) val = val.slice(0,2) + ' / ' + val.slice(2);
+            input.value = val;
+        }
+
+        // ============================================
+        // Taksit seçimi
+        // ============================================
+        function selectInstallment(el, count) {
+            document.querySelectorAll('.installment-option').forEach(o => o.classList.remove('selected'));
+            el.classList.add('selected');
+
+            const rates = { 1: 0, 3: 0.04, 6: 0.07 };
+            const total = amount * (1 + (rates[count] || 0));
+            const perMonth = total / count;
+
+            document.getElementById('payButtonAmount').textContent = fmt(total);
+
+            if (count === 1) {
+                document.getElementById('price3x').textContent = '₺ –';
+                document.getElementById('price6x').textContent = '₺ –';
+            }
+        }
+
+        // ============================================
+        // Ödeme işlemi (PayTR entegrasyonu burada olacak)
+        // ============================================
+        function handlePayment(e) {
+            e.preventDefault();
+
+            const btn = document.getElementById('payButton');
+            btn.classList.add('loading');
+
+            // Gerçek entegrasyonda:
+            // 1. Supabase Edge Function'a istek gönderilir (booking_id + user token)
+            // 2. Edge Function PayTR'den token alır
+            // 3. PayTR iFrame yüklenir
+            // Şimdilik demo redirect:
+            setTimeout(() => {
+                window.location.href = 'odeme-basarili.html?booking=' + bookingId + '&amount=' + amount;
+            }, 2000);
+        }
+    </script>
+
+</body>
+</html>
